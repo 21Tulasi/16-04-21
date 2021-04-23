@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            FireBase Demo
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+       
+    </head>
+    <body onload="display()">
+            <div class="container">
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h2><b>Users</b></h2>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="btn btn-success" data-target="#my-modal" data-toggle="modal"><i class="fa fa-plus"></i><span> Add new user</span></a>
+                                </div>
+                            </div>
+                        </div>
+                            <table class="table table-hover table-stripped" id="table1">
+                                
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>UserID</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    <tbody id="tbody1">
+
+                                    </tbody>           
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal"  id="my-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Add User</h3>
+                            <button class="close" data-dismiss="modal" >&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="uid">Enter uid</label>
+                                    <input type="text" id="uid" class="form-control" placeholder="user id">
+                            </div>
+                            <div class="form-group">
+                                    <label for="uname">Enter name</label>
+                                    <input type="text" id="uname" class="form-control" placeholder="user name">
+                            </div>
+                            <div class="form-group">
+                                    <label for="email">Enter email</label>
+                                    <input type="text" id="email" class="form-control" placeholder="user email">
+                            </div>
+
+                            </form>
+                        </div> 
+                        <div class="modal-footer">
+                            <button class="btn btn-success" onclick="insertData()" data-dismiss="modal">Add new user</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+            <div class="modal"  id="my-modal1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>UPDATE USER</h3>
+                            <button class="close" data-dismiss="modal" >&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="uid1">Enter uid</label>
+                                    <input type="text" id="uid1" class="form-control" placeholder="user id" readonly>
+                            </div>
+                            <div class="form-group">
+                                    <label for="uname1">Enter name</label>
+                                    <input type="text" id="uname1" class="form-control" placeholder="user name">
+                            </div>
+                            <div class="form-group">
+                                    <label for="email1">Enter email</label>
+                                    <input type="text" id="email1" class="form-control" placeholder="user email">
+                            </div>
+
+                            </form>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" onclick="updateData()" data-dismiss="modal">Update user</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+    </body>
+</html>
